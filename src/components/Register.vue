@@ -44,14 +44,14 @@
   methods: {
     async registro() {
        this.submitted = true 
-      if(!this.nombre || !this.apellido || !this.email || !this.password || !this.rol){
-        alert("Completar los datos faltantes!")
-        return
-      }else{
-        console.log(`Logueando con ${this.email} y ${this.password}`);
-        this.$router.push('/home');;
+        if(!this.nombre || !this.apellido || !this.email || !this.password || !this.rol){
+            alert("Completar los datos faltantes!")
+            return
+        }else{
+            console.log(`Logueando con ${this.email} y ${this.password}`);
+            this.$router.push('/home');
+            }
         }
-    }
-  }
+     }
 };
 </script>

@@ -23,11 +23,14 @@ export default {
   },
   methods: {
     async login() {
-      console.log(`Logueando con ${this.email} y ${this.password}`);
-      this.$router.push('/home');
+      if (this.rol === 'admin'){
+        this.$router.push('/clients');
+      }else{
+        this.$router.push('/home');
+      }
     },
     registro(){
-        this.$router.push('/registro');
+        this.$router.push('/register');
     }
   }
 };
