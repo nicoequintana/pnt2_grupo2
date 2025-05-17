@@ -14,7 +14,7 @@ import Nav from './Nav.vue'
       <p>Proyecto de rutinas personalizadas - 3Q ORT</p>
       <table>
           <tr>
-            <td>hola hola</td>
+            <td></td>
             
             <td>
                 <router-view />

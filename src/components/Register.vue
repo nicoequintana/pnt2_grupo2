@@ -12,7 +12,7 @@
       </div>
       <div class="form-group">
         <input v-model="email" type="email" placeholder="Correo" />
-        <span v-if="!email && submitted" class="error">*</span>
+        <span v-if="!email || (!checkEmail && submitted)" class="error">*</span>
       </div>
       <div class="form-group">
         <input v-model="password" type="password" placeholder="Contraseña" />
@@ -41,11 +41,20 @@
         submitted: false //indico si fue enviado el formulario
         };
     },
+    computed: {
+      checkEmail() {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(this.email); //devuelve true o false si cumple con las condiciones
+      }
+    },
   methods: {
     async registro() {
        this.submitted = true 
         if(!this.nombre || !this.apellido || !this.email || !this.password || !this.rol){
             alert("Completar los datos faltantes!")
+            return
+        } if (!this.checkEmail) {
+           alert("El email no es válido!");
             return
         }else{
             console.log(`Logueando con ${this.email} y ${this.password}`);
@@ -55,3 +64,12 @@
      }
 };
 </script>
+
+<style scoped>
+.error {
+  color: red;
+  font-weight: bold;
+  margin-left: 5px;
+}
+</style>
+
