@@ -1,15 +1,18 @@
 <script setup>
-import { HomeView, LoginPage, RegisterPage } from './views';
-import { UserLayout, TrainerLayout } from './layouts'
+import { LoginPage, RegisterPage } from './auth/views';
+import { UserLayout, TrainerLayout } from './layouts';
+
+
+
 
 </script>
 
 <template>
   <!-- <HomeView /> -->
+  <LoginPage />
+  <RegisterPage />
   <UserLayout />
   <TrainerLayout />
-  <!-- <LoginPage /> -->
-  <!-- <RegisterPage /> -->
 </template>
 
 <style scoped>

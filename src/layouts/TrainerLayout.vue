@@ -1,5 +1,6 @@
 <script setup>
 import Navbar from '../components/Navbar.vue';
+import Sidebar from '../components/Sidebar.vue';
 
 
 </script>
@@ -63,6 +64,7 @@ import Navbar from '../components/Navbar.vue';
 
             </main>
             <Navbar />
+            <Sidebar />
         </div>
     </div>
 </template>
