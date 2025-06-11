@@ -29,7 +29,7 @@ import Nav from './Nav.vue'
 .hero {
   width: 100%;
   height: 100vh;
-  background-image: url('https://media.revistagq.com/photos/6012947c9976390c571e2666/16:9/w_2560%2Cc_limit/ejercicios%2520gluteos.jpg');
+  /* background-image: url('https://media.revistagq.com/photos/6012947c9976390c571e2666/16:9/w_2560%2Cc_limit/ejercicios%2520gluteos.jpg'); */
   background-size: cover;
   background-position: top;
   display: flex;
