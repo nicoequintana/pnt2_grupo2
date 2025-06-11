@@ -57,6 +57,17 @@
            alert("El email no es válido!");
             return
         }else{
+          const usuario = {
+              nombre: this.nombre,
+              apellido: this.apellido,
+              email: this.email,
+              password: this.password,
+              rol: this.rol
+            };
+            console.log(this.email)
+            console.log(this.password)
+            localStorage.setItem('usuario', JSON.stringify(usuario));
+            
             console.log(`Logueando con ${this.email} y ${this.password}`);
             this.$router.push('/home');
             }

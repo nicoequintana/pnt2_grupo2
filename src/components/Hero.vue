@@ -10,8 +10,6 @@ import Nav from './Nav.vue'
     <Nav class="hero-nav" />
 
     <div class="hero-content">
-      <h1>Bienvenido a NT 2</h1>
-      <p>Proyecto de rutinas personalizadas - 3Q ORT</p>
       <table>
           <tr>
             <td></td>

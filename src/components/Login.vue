@@ -23,14 +23,30 @@ export default {
   },
   methods: {
     async login() {
-      if (this.rol === 'admin'){
-        this.$router.push('/clients');
-      }else{
-        this.$router.push('/home');
+      const usuarioGuardado = JSON.parse(localStorage.getItem('usuario'));
+
+      if (!usuarioGuardado) {
+        alert("No hay usuario registrado.");
+        return;
+      }
+
+      if (
+        usuarioGuardado.email === this.email &&
+        usuarioGuardado.password === this.password
+      ) {
+        if (usuarioGuardado.rol === 'admin') {
+          alert("ADMIN");
+          this.$router.push('/clients');
+        } else {
+          this.$router.push('/user');
+        }
+      } else {
+        alert("Usuario o contraseña incorrectos");
       }
     },
-    registro(){
-        this.$router.push('/register');
+
+    registro() {
+      this.$router.push('/register');
     }
   }
 };
