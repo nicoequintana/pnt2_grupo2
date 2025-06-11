@@ -1,7 +1,6 @@
 <style>
 
 .title{
-    /* margin-bottom: 1rem; */
     font-size: 5rem;
     font-weight: 700;
     color: var(--color-text-light);
@@ -22,11 +21,11 @@
     width: 100dvw;
     height: 100dvh;
     padding: 2rem;
-    padding-top: 4rem; /* nuevo */
+    padding-top: 4rem;
     background-color: var(--color-background-dark);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* cambiado */
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -75,11 +74,7 @@ span{
     align-self: self-end;
     margin-bottom: 4rem;
 }
-/* 
-.form > span:nth-of-type(2) {
-    align-self: center;
-    font-size: 1.5rem;
-} */
+
 .form {
     width: 80%;
     align-self: center;
@@ -91,7 +86,7 @@ span{
     width: 200px;
     height: 40px;
     margin-bottom: 1rem;
-    background-color: var(--color-success); /* Este es tu verde actual */
+    background-color: var(--color-success);
     color: var(--color-text-light);
     font-size: 1.5rem;
     border-radius: 5px;
@@ -101,7 +96,7 @@ span{
 }
 
 :root {
-    --color-success: #28a745; /* verde bootstrap, por ejemplo */
+    --color-success: #28a745;
 }
 
 .register-link {
