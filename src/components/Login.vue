@@ -21,7 +21,7 @@
     width: 100dvw;
     height: 100dvh;
     padding: 2rem;
-    padding-top: 4rem;
+    padding-top: 0rem;
     background-color: var(--color-background-dark);
     display: flex;
     flex-direction: column;
@@ -29,27 +29,24 @@
     align-items: center;
 }
 
-
-.loginContainer{
-    padding: 1rem 1rem 0.5rem 1rem;
-    width: 100%;
-    max-width: 500px;
-    height: 400px;
-    border: 1px solid rgba(255, 255, 255, 0.137);
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+.loginContainer {
+  max-width: 400px;
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 5px;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
-.form-group{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0.5rem;
-    color: var(--color-text-light);
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 input {
@@ -58,6 +55,7 @@ input {
     background-color: #f5f5f5;
     border: 1px solid #ccc;
     margin-bottom: 0.5rem;
+    color: #000;
 }
 
 label{
@@ -79,16 +77,18 @@ span{
     width: 80%;
     align-self: center;
     font-size: 1.5rem;
+    margin-top: 0;     
+    padding-top: 0;
 }
 
 
 .btn-login {
-    width: 200px;
-    height: 40px;
-    margin-bottom: 1rem;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 0.5rem;
     background-color: var(--color-success);
     color: var(--color-text-light);
-    font-size: 1.5rem;
+    font-size: 1rem;
     border-radius: 5px;
     border: none;
     cursor: pointer;
@@ -100,7 +100,9 @@ span{
 }
 
 .register-link {
-    font-size: 0.9rem;         
+    width: 200px;
+    height: 50;
+    font-size: 1rem;         
     color: #e74c3c; 
     border: 1px solid #e74c3c; 
     border-radius: 5px;
@@ -121,19 +123,15 @@ span{
       <div class="form">
         <form class="form-group" @submit.prevent="login">
           <div class="form-group">
-            <label for="email">Correo</label>
             <input v-model="email" type="email" placeholder="Correo" />
           </div>
           <div class="form-group">
-            <label for="email">Contraseña</label>
             <input v-model="password" type="password" placeholder="Contraseña" />
           </div>
           <div class="form-actions">
               <button class="btn-login" type="submit">Ingresar</button>
-
-              <span class="register-link">Registarse</span>
+              <button class="register-link" @click="registro">Registrarse</button>
           </div>
-          <!-- <button class="btn-login" type="submit">Entrar</button><button  @click="registro">Registrarse</button> -->
         </form>
         </div>
       </div>
@@ -164,7 +162,7 @@ export default {
         if (usuarioGuardado.rol === 'admin') {
           this.$router.push('/clients');
         } else {
-          this.$router.push('/user');
+          this.$router.push('/routines');
         }
       } else {
         alert("Usuario o contraseña incorrectos");

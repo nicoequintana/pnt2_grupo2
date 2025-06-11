@@ -3,33 +3,52 @@ import Nav from './Nav.vue'
 </script>
 
 <template>
-
   <div class="hero">
-    <div class="hero-overlay"></div> <!-- Mueve la capa oscura aquí -->
-
+    <div class="hero-overlay"></div>
     <Nav class="hero-nav" />
-
     <div class="hero-content">
       <table>
-          <tr>
-            <td></td>
-            
-            <td>
-                <router-view />
-            </td>
-          </tr>
+        <tr>
+          <td></td>
+          <td>
+            <router-view />
+          </td>
+        </tr>
       </table>
     </div>
   </div>
-
-
 </template>
 
+<!-- Global resets and table cleanup -->
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-background-dark);
+}
+
+.hero-content table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  background: transparent;
+}
+
+.hero-content td {
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+</style>
+
+<!-- Scoped component styles -->
 <style scoped>
 .hero {
   width: 100%;
   height: 100vh;
-  /* background-image: url('https://media.revistagq.com/photos/6012947c9976390c571e2666/16:9/w_2560%2Cc_limit/ejercicios%2520gluteos.jpg'); */
+  /* background-image: url('...'); */
   background-size: cover;
   background-position: top;
   display: flex;
@@ -48,19 +67,19 @@ import Nav from './Nav.vue'
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Oscurece la imagen de fondo */
-  z-index: 1; /* Asegura que esté detrás del contenido */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .hero-nav {
   position: relative;
-  z-index: 2; /* Asegura que Nav esté por encima de la capa oscura */
+  z-index: 2;
   width: 100%;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2; /* Asegura que el contenido esté por encima de la capa oscura */
+  z-index: 2;
   margin-top: 20px;
 }
 

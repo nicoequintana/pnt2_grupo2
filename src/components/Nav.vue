@@ -7,7 +7,7 @@
 <div class="navClass">
     <nav class="navTest">
         <RouterLink class="navLink" to="/home">Home</RouterLink>
-        <RouterLink class="navLink" to="/routines">Routine</RouterLink>
+        <!-- <RouterLink class="navLink" to="/routines">Routine</RouterLink> -->
         <RouterLink class="navLink" to="/login">Login</RouterLink>
     </nav>
 </div>

@@ -1,33 +1,105 @@
+<style>
+
+.registerContainer {
+  width: fit-content;            
+  max-width: 500px;     
+  padding: 1.5rem 2rem;   
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.25); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+span{
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 5px 15px;
+    border: 1px solid var(--color-text-light);
+    border-radius: 5px;
+    align-self: self-end;
+    margin-bottom: 4rem;
+}
+
+
+.btn-register {
+    width: 200px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+    background-color: var(--color-success);
+    color: var(--color-text-light);
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 0.5rem;
+  align-items: center;
+  width: 100%; 
+  margin-bottom: 1rem;
+}
+
+.form-row label {
+  justify-self: end;
+  color: var(--color-text-light);
+}
+
+.form-row input {
+  justify-self: center;
+}
+
+
+.form-row .error {
+  color: #e74c3c;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+</style>
+
+
 <template>
-  <div>
-    <h2>Registrarse</h2>
-    <form @submit.prevent="registro">
-      <div class="form-group">
-        <input v-model="nombre" type="text" placeholder="Nombre" />
-        <span v-if="!nombre && submitted" class="error">*</span>
-      </div>
-      <div class="form-group">
-      <input v-model="apellido" type="text" placeholder="Apellido" />
-      <span v-if="!apellido && submitted" class="error">*</span>
-      </div>
-      <div class="form-group">
-        <input v-model="email" type="email" placeholder="Correo" />
-        <span v-if="!email || (!checkEmail && submitted)" class="error">*</span>
-      </div>
-      <div class="form-group">
-        <input v-model="password" type="password" placeholder="Contraseña" />
-        <span v-if="!password && submitted" class="error">*</span>
-      </div>
-      <div class="form-group">
-        <input v-model="rol" type="text" placeholder="Rol" />
-        <span v-if="!rol && submitted" class="error">*</span>
-      </div>
-      <div class="form-group">
-        <button type="submit">Registrarse</button>
-      </div>
-    </form>
+  <div class="registerPage">
+    <div class="registerContainer">
+      <h2>Registro</h2>
+      <form @submit.prevent="registro">
+        <div class="form-row">
+          <input v-model="nombre" id="Nombre" type="text" placeholder="Nombre" />
+          <span v-if="!nombre && submitted" class="error">*</span>
+        </div>
+        <div class="form-row">
+          <input v-model="apellido" id="Apellido" type="text" placeholder="Apellido" />
+          <span v-if="!apellido && submitted" class="error">*</span>
+        </div>
+        <div class="form-row">
+          <input id="Email" v-model="email" type="email" placeholder="Correo" />
+          <span v-if="(!email || !checkEmail) && submitted" class="error">*</span>
+        </div>
+        <div class="form-row">
+          <input v-model="password" id="Password" type="password" placeholder="Contraseña" />
+          <span v-if="submitted && !checkEmail" class="error">*</span>
+        </div>
+        <div class="form-row">
+          <input v-model="rol" id="Rol" type="text" placeholder="Rol" />
+          <span v-if="!rol && submitted" class="error">*</span>
+        </div>
+        
+        <div class="form-actions">
+          <button class="btn-register" type="submit">Registrarse</button>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
+
 
 <script>
     export default {
@@ -75,12 +147,3 @@
      }
 };
 </script>
-
-<style scoped>
-.error {
-  color: red;
-  font-weight: bold;
-  margin-left: 5px;
-}
-</style>
-

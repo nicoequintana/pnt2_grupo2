@@ -16,6 +16,15 @@
 </template>
 
 <style scoped>
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background-dark);
+  height: 100%;
+  width: 100%;
+}
+
+
 .testClass {
   width: 100%;
   height: 100dvh;
