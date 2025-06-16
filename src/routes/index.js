@@ -10,8 +10,8 @@ import App from '../App.vue'
 
 
 const routes = [
-    { path: '/', name: 'Home', component: App},
-    { path: '/home', name: 'Home', component: Home},
+    { path: '/', name: 'Home', component: Home},
+   // { path: '/home', name: 'Home', component: Home},
     { path: '/login', name: 'login', component: Login},
     { path: '/register', name: 'Register', component: Register},
     { path: '/routines', name: 'Routines', component: Routines},
