@@ -18,16 +18,17 @@
 }
 
 .loginPage {
-    width: 100dvw;
-    height: 100dvh;
-    padding: 2rem;
-    padding-top: 0rem;
-    background-color: var(--color-background-dark);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+  width: 100dvw;
+  height: 100dvh;
+  padding: 2rem;
+  background-color: var(--color-background-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 8vh;
 }
+
 
 .loginContainer {
   max-width: 400px;

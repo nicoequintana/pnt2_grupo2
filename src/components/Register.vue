@@ -3,9 +3,10 @@
 .registerPage {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100vh;
   background-color: #222;
+  padding-top: 8vh;
 }
 
 .registerContainer {
