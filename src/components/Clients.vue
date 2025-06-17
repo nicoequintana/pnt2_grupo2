@@ -11,8 +11,8 @@ const logout = () => {
 
 <template>
   <div class="alumno-dashboard">
-    <h1>¡Bienvenido, Alumno!</h1>
-    <p>Aquí verás tus rutinas, progreso, y más.</p>
+    <h1>¡Bienvenido!</h1>
+    <p>Aquí verás tus alumnos, y su progeso</p>
     <button @click="logout">Cerrar sesión</button>
   </div>
 </template>

@@ -1,5 +1,13 @@
 <style>
 
+.registerPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #222;
+}
+
 .registerContainer {
   width: fit-content;            
   max-width: 500px;     
@@ -141,7 +149,7 @@ span{
             localStorage.setItem('usuario', JSON.stringify(usuario));
             
             console.log(`Logueando con ${this.email} y ${this.password}`);
-            this.$router.push('/home');
+            this.$router.push('/login');
             }
         }
      }
